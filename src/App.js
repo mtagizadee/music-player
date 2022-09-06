@@ -1,6 +1,6 @@
 const App = () => {
   return (
-    <div>
+    <div className="full-screen center-content font-bold">
       App
     </div>
   )
