@@ -1,8 +1,13 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/home/Home';
+
 const App = () => {
   return (
-    <div className="full-screen center-content font-bold">
-      App
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
