@@ -1,7 +1,7 @@
-import useFetchSongs from './../../hooks/useFetchSongs';
-import Loader from '../../components/Loader';
-import LayOut from '../../components/layout';
-import SongCard from './../../components/SongCard';
+import useFetchSongs from '../hooks/useFetchSongs';
+import Loader from '../components/Loader';
+import LayOut from '../components/layout';
+import SongCard from '../components/SongCard';
 
 {/* <audio ref={songRef}>
                 <source src={require('../../ost.mp3')} />

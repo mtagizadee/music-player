@@ -49,4 +49,8 @@ export default class SongsApi {
     static async fetchSongs() {
         return songs;
     }
+
+    static async fecthSong(id) {
+        return songs.find((song) => song.id === id);
+    }
 }
