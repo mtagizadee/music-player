@@ -1,26 +1,18 @@
 import { ReactComponent as Play } from '../assets/svg/play.svg';
-import { useState } from 'react';
 import { useCallback } from 'react';
 import { useNavigate } from 'react-router';
+import useHover from './../hooks/useHover';
 
 const SongCard = ({ name, author, image, id }) => {
-    const [hover, setHover] = useState(false);
+    const { hover, onMouseEnter, onMouseLeave } = useHover();
     const navigate = useNavigate();
-
-    const onMouseEnter = useCallback(() => {
-        setHover(true)
-    }, []);
-
-    const onMouseLeave = useCallback(() => {
-        setHover(false);
-    }, [])
 
     const onPlayClick = useCallback(() => {
         navigate(`/songs/${id}`);
     }, []);
 
     return (
-        <div className="w-full max-w-[200px] bg-bold-red text-white rounded">
+        <div className="w-full max-w-[280px] bg-bold-red text-white rounded">
             <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className="w-full relative">
                 <img src={image} alt="song's image" />
                 <div className="shadow" />

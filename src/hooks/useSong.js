@@ -8,12 +8,12 @@ const useSong = (ref) => {
         setIsPlaying(true);
     }
 
-    const stop = () => {
-        ref.current.stop();
+    const pause = () => {
+        ref.current.pause();
         setIsPlaying(false);
     }
 
-    return { play, stop, isPlaying };
+    return { play, pause, isPlaying };
 }
 
 export default useSong;
