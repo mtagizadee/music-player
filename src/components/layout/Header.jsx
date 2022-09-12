@@ -27,7 +27,7 @@ const Header = () => {
                         isAuth ||
                         <div>
                             <button onClick={onLoginClick}> Log in </button> | <></>
-                            <button onClcik={onSignUpClick}> Sign up </button>
+                            <button onClick={onSignUpClick}> Sign up </button>
                         </div> // TODO: add else statement
                     }
                 </div>

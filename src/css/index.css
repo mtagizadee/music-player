@@ -22,4 +22,8 @@
     .clickable {
         @apply hover:cursor-pointer;
     }
+
+    .shadow {
+        @apply absolute top-0 w-full h-full bg-black bg-opacity-30;
+    }
 }

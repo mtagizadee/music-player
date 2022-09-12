@@ -16,6 +16,9 @@ module.exports = {
         black: '#2d2a32'
       },
       screens: {
+        'xs': '480px',
+        // => @media (min-width: 480px) { ... }
+
         'sm': '640px',
         // => @media (min-width: 640px) { ... }
 
@@ -32,7 +35,7 @@ module.exports = {
         // => @media (min-width: 1536px) { ... }
       },
       maxWidth: {
-        main: '1400px'
+        main: '1200px'
       }
     },
   },

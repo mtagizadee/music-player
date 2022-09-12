@@ -6,11 +6,10 @@ const useFetchSongs = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState('');
 
-    // TODO: async function
-    const fetchSongs = () => {
+    const fetchSongs = async () => {
         try {
             // TODO: here should be some kind of a response
-            const songs = SongsApi.fetchSongs();
+            const songs = await SongsApi.fetchSongs();
             setSongs(songs) // TODO: therefore here will be response.data.songs --> kinda like this
         } catch (error) {
             setError(error);
