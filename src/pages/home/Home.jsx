@@ -1,6 +1,6 @@
-import { useRef } from 'react';
 import useFetchSongs from './../../hooks/useFetchSongs';
-import Logo from './../../components/Logo';
+import Loader from '../../components/Loader';
+import LayOut from '../../components/layout';
 
 {/* <audio ref={songRef}>
                 <source src={require('../../ost.mp3')} />
@@ -11,10 +11,14 @@ import Logo from './../../components/Logo';
 const Home = () => {
     const { songs, isLoading, error } = useFetchSongs();
 
+    if (isLoading) return <Loader />
+
     return (
-        <div className="center-content full-screen font-bold flex-col">
-            <Logo />
-        </div>
+        <LayOut>
+            <div className="w-full h-screen p-6">
+
+            </div>
+        </LayOut>
     );
 }
 
