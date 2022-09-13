@@ -7,15 +7,28 @@ import { ReactComponent as Play } from '../assets/svg/play.svg';
 import { ReactComponent as Pause } from '../assets/svg/stop.svg';
 import useSong from './../hooks/useSong';
 import { useRef } from 'react';
-
+import { useEffect } from 'react';
+import helpers from '../helpers';
 
 const Song = () => {
     const { id } = useParams();
     const { hover, onMouseEnter, onMouseLeave } = useHover();
     const { song, isLoading, error } = useFetchSong(parseInt(id));
-    const songRef = useRef(null);
-    const { isPlaying, play, pause } = useSong(songRef);
+    const songRef = useRef({});
+    const { isPlaying, play, pause, duration, currentTime, updateCurrentTime } = useSong(songRef);
+
+
+    useEffect(() => {
+        if (isPlaying) {
+            setInterval(() => {
+                updateCurrentTime();
+            }, duration - currentTime);
+        }
+    }, [isPlaying]);
+
     if (isLoading) return <Loader />
+
+
 
     return (
         <LayOut>
@@ -36,9 +49,14 @@ const Song = () => {
                                     }
                                 </div>
                             </div>
-                            <div className='w-full absolute bottom-0 p-3 text-white'>
-                                <h3 className='text-xl'> {song.name} </h3>
-                                <p className='text-black-red'> {song.author} </p>
+                            <div className='w-full absolute bottom-0 p-3 text-white flex items-center justify-between px-6 xs:px-12'>
+                                <div>
+                                    <h3 className='text-xl'> {song.name} </h3>
+                                    <p className='text-black-red'> {song.author} </p>
+                                </div>
+                                <div>
+                                    {helpers.fixSongTime(currentTime)} / {helpers.fixSongTime(duration)}
+                                </div>
                             </div>
                         </>
                     }
