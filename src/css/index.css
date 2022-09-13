@@ -8,6 +8,10 @@
     * {
         @apply font-Poppins;
     }
+
+    body {
+        @apply bg-black text-gray-100;
+    }
 }
 
 @layer components {

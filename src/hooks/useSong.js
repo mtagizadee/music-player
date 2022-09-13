@@ -8,7 +8,12 @@ const useSong = (ref) => {
     // TODO: look at this
     useEffect(() => {
         setDuration(ref.current.duration);
-    }, []);
+        if (isPlaying) {
+            setInterval(() => {
+                updateCurrentTime();
+            }, duration - currentTime);
+        }
+    }, [isPlaying]);
 
     const play = () => {
         ref.current.play();
@@ -24,7 +29,7 @@ const useSong = (ref) => {
         setCurrentTime(ref.current.currentTime)
     }
 
-    return { play, pause, isPlaying, duration, currentTime, updateCurrentTime };
+    return { play, pause, isPlaying, duration, currentTime };
 }
 
 export default useSong;

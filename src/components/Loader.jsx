@@ -3,7 +3,7 @@ import Logo from './Logo';
 const Loader = () => {
 
     return (
-        <div className="center-content full-screen font-bold flex-col">
+        <div className="center-content w-full h-[100vh] font-bold">
             <Logo />
         </div>
     );
