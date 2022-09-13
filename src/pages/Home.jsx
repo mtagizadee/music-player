@@ -13,7 +13,7 @@ const Home = () => {
             <div className="w-full p-6 flex flex-col items-center xs:grid gap-[30px] grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {songs.map((song) =>
                     <div className='flex justify-center'>
-                        <SongCard name={song.name} id={song.id} author={song.author} image={song.image} key={song.id} />
+                        <SongCard name={song.name} id={song.id} author={song.author} image={`url(${song.image})`} key={song.id} />
                     </div>
                 )}
             </div>

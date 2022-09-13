@@ -14,7 +14,10 @@ const SongCard = ({ name, author, image, id }) => {
     return (
         <div className="w-full max-w-[280px] bg-bold-red text-white rounded">
             <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className="w-full relative">
-                <img src={image} alt="song's image" />
+                <div
+                    className='w-full min-h-[200px] bg-cover bg-no-repeat bg-center'
+                    style={{ backgroundImage: image }}
+                />
                 <div className="shadow" />
                 {hover &&
                     <div className='absolute bottom-0 bg-black w-full bg-opacity-20 pt-1'>
